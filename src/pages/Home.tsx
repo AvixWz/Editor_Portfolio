@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import { motion } from 'framer-motion';
-import { ArrowRight, Play } from 'lucide-react';
+import { ArrowRight } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import InteractiveGlobe from '../components/InteractiveGlobe';
 
@@ -120,86 +120,6 @@ const Home: React.FC = () => {
             viewport={{ once: true }}
           >
             <InteractiveGlobe />
-          </motion.div>
-        </div>
-      </section>
-
-      {/* Featured Work Preview */}
-      <section className="py-20">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <motion.div
-            initial={{ opacity: 0, y: 40 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            viewport={{ once: true }}
-            className="text-center mb-12"
-          >
-            <h2 className="text-4xl font-bold text-gray-900 dark:text-white mb-4">
-              Featured Work
-            </h2>
-            <p className="text-xl text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
-              A glimpse into some of my most impactful projects
-            </p>
-          </motion.div>
-
-          <div className="grid md:grid-cols-2 gap-8">
-            {[1, 2].map((item) => (
-              <motion.div
-                key={item}
-                whileHover={{ y: -10 }}
-                className="group relative bg-white dark:bg-gray-800 rounded-2xl shadow-xl overflow-hidden"
-                initial={{ opacity: 0, y: 40 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.8, delay: item * 0.2 }}
-                viewport={{ once: true }}
-              >
-                <div className="aspect-video bg-gradient-to-br from-blue-500 to-purple-600 relative overflow-hidden">
-                  <div className="absolute inset-0 bg-black/20 group-hover:bg-black/10 transition-colors" />
-                  <div className="absolute inset-0 flex items-center justify-center">
-                    <motion.button
-                      whileHover={{ scale: 1.1 }}
-                      className="w-16 h-16 bg-white/20 backdrop-blur-sm rounded-full flex items-center justify-center text-white"
-                    >
-                      <Play size={24} />
-                    </motion.button>
-                  </div>
-                </div>
-                <div className="p-6">
-                  <h3 className="text-xl font-semibold text-gray-900 dark:text-white mb-2">
-                    Project Title {item}
-                  </h3>
-                  <p className="text-gray-600 dark:text-gray-300 mb-4">
-                    A brief description of this amazing project and its impact on the client's business.
-                  </p>
-                  <div className="flex flex-wrap gap-2">
-                    {['Design', 'Branding', 'UI/UX'].map((tag) => (
-                      <span
-                        key={tag}
-                        className="px-3 py-1 bg-blue-100 dark:bg-blue-900/30 text-blue-600 dark:text-blue-400 text-sm rounded-full"
-                      >
-                        {tag}
-                      </span>
-                    ))}
-                  </div>
-                </div>
-              </motion.div>
-            ))}
-          </div>
-
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.4 }}
-            viewport={{ once: true }}
-            className="text-center mt-12"
-          >
-            <Link
-              to="/projects"
-              className="inline-flex items-center px-8 py-4 bg-transparent border-2 border-blue-600 text-blue-600 font-semibold rounded-full hover:bg-blue-600 hover:text-white transition-all duration-300"
-            >
-              View All Projects
-              <ArrowRight className="ml-2" size={20} />
-            </Link>
           </motion.div>
         </div>
       </section>

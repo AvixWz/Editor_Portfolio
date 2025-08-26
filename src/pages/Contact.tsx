@@ -19,7 +19,7 @@ const Contact: React.FC = () => {
     {
       icon: MessageSquare,
       title: 'Discord',
-      value: 'henrygfx#1234',
+      value: 'henry_00_',
       link: 'https://discord.com/users/henrygfx',
       description: 'Quick chats and real-time collaboration',
       color: 'from-blue-500 to-indigo-600',
@@ -53,9 +53,9 @@ const Contact: React.FC = () => {
     },
     {
       icon: Twitter,
-      name: 'Twitter',
-      handle: '@henrygfx',
-      link: 'https://twitter.com/henrygfx',
+      name: 'x',
+      handle: '@Saptadweep19847',
+      link: 'https://x.com/Saptadweep19847',
       followers: '8.7K',
       description: 'Design tips, trends, and quick thoughts',
     },
