@@ -62,8 +62,8 @@ const Contact: React.FC = () => {
   ];
 
   const workingHours = [
-    { day: 'Monday - Friday', hours: '9:00 AM - 6:00 PM EST' },
-    { day: 'Saturday', hours: '10:00 AM - 2:00 PM EST' },
+    { day: 'Monday - Friday', hours: '9:00 AM - 6:00 PM IST' },
+    { day: 'Saturday', hours: '10:00 AM - 2:00 PM IST' },
     { day: 'Sunday', hours: 'Closed' },
   ];
 
@@ -244,10 +244,10 @@ const Contact: React.FC = () => {
                 </h3>
               </div>
               <p className="text-gray-600 dark:text-gray-300 mb-4">
-                Based in New York, USA (EST Timezone)
+                Based in Tripura, India (IST Timezone)
               </p>
               <p className="text-sm text-gray-500 dark:text-gray-400">
-                Available for remote work worldwide and local meetings in the NYC area.
+                Available for remote work worldwide.
               </p>
             </div>
 

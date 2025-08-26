@@ -76,7 +76,7 @@ const About: React.FC = () => {
               <div className="relative">
                 <div className="w-full aspect-square rounded-2xl overflow-hidden shadow-2xl">
                   <img
-                    src="/assets/henry.jpg"
+                    src="dist/assets/henry.jpg"
                     alt="Henry - Graphic Designer"
                     className="w-full h-full object-cover opacity-80"
                   />
@@ -114,7 +114,7 @@ const About: React.FC = () => {
                   { icon: Clock, label: '5+ Years', desc: 'Experience' },
                   { icon: Users, label: '150+', desc: 'Projects' },
                   { icon: Globe, label: '15+', desc: 'Countries' },
-                  { icon: Award, label: '12', desc: 'Awards' },
+                  // { icon: Award, label: '12', desc: 'Awards' },
                 ].map((stat, index) => (
                   <motion.div
                     key={stat.label}
