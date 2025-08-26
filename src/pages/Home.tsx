@@ -35,7 +35,7 @@ const Home: React.FC = () => {
                 transition={{ duration: 1, delay: 0.2 }}
               >
                 <span className="bg-gradient-to-r from-blue-600 via-purple-600 to-cyan-500 bg-clip-text text-transparent">
-                  henrygfx
+                  HenryGfx
                 </span>
               </motion.h1>
               
