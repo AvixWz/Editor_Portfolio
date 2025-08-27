@@ -1,8 +1,12 @@
 import React, { useEffect } from 'react';
 import { motion } from 'framer-motion';
-import { ArrowRight } from 'lucide-react';
+import { ArrowRight, Play } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import InteractiveGlobe from '../components/InteractiveGlobe';
+import Testimonials from '../components/Testimonials';
+import Services from '../components/Services';
+import FAQ from '../components/FAQ';
+import LazyImage from '../components/LazyImage';
 
 const Home: React.FC = () => {
   useEffect(() => {
@@ -35,7 +39,7 @@ const Home: React.FC = () => {
                 transition={{ duration: 1, delay: 0.2 }}
               >
                 <span className="bg-gradient-to-r from-blue-600 via-purple-600 to-cyan-500 bg-clip-text text-transparent">
-                  HenryGfx
+                  henrygfx
                 </span>
               </motion.h1>
               
@@ -123,6 +127,14 @@ const Home: React.FC = () => {
           </motion.div>
         </div>
       </section>
+      {/* Services Section */}
+      <Services />
+
+      {/* Testimonials Section */}
+      <Testimonials />
+
+      {/* FAQ Section */}
+      <FAQ />
     </div>
   );
 };

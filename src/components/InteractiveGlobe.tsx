@@ -3,6 +3,7 @@ import { Canvas, useFrame, useThree } from '@react-three/fiber';
 import { Sphere, Line } from '@react-three/drei';
 import * as THREE from 'three';
 import { useTheme } from '../contexts/ThemeContext';
+import { motion } from 'framer-motion';
 
 interface ClientLocation {
   name: string;
@@ -22,11 +23,10 @@ const clientLocations: ClientLocation[] = [
 const Globe: React.FC = () => {
   const meshRef = useRef<THREE.Mesh>(null);
   const { isDark } = useTheme();
-  const { size } = useThree();
 
   useFrame((state) => {
     if (meshRef.current) {
-      meshRef.current.rotation.y += 0.002;
+      meshRef.current.rotation.y += 0.001;
     }
   });
 
@@ -49,7 +49,7 @@ const Globe: React.FC = () => {
         <meshPhongMaterial
           color={isDark ? '#1a1a1a' : '#f0f0f0'}
           transparent
-          opacity={0.8}
+          opacity={0.6}
           wireframe
         />
       </Sphere>
@@ -62,17 +62,17 @@ const Globe: React.FC = () => {
           <group key={location.name}>
             {/* Location marker */}
             <mesh position={position}>
-              <sphereGeometry args={[0.05]} />
+              <sphereGeometry args={[0.04]} />
               <meshBasicMaterial color="#3b82f6" />
             </mesh>
             
             {/* Pulsing ring */}
             <mesh position={position}>
-              <ringGeometry args={[0.08, 0.12, 32]} />
+              <ringGeometry args={[0.06, 0.1, 16]} />
               <meshBasicMaterial
                 color="#3b82f6"
                 transparent
-                opacity={0.5 + Math.sin(Date.now() * 0.003 + index) * 0.2}
+                opacity={0.3 + Math.sin(Date.now() * 0.002 + index) * 0.2}
                 side={THREE.DoubleSide}
               />
             </mesh>
@@ -85,7 +85,13 @@ const Globe: React.FC = () => {
 
 const InteractiveGlobe: React.FC = () => {
   return (
-    <div className="w-full h-96 relative">
+    <motion.div 
+      className="w-full h-96 relative"
+      initial={{ opacity: 0, scale: 0.8 }}
+      whileInView={{ opacity: 1, scale: 1 }}
+      transition={{ duration: 1 }}
+      viewport={{ once: true }}
+    >
       <Canvas camera={{ position: [0, 0, 6], fov: 45 }}>
         <ambientLight intensity={0.5} />
         <pointLight position={[10, 10, 10]} intensity={1} />
@@ -93,7 +99,13 @@ const InteractiveGlobe: React.FC = () => {
       </Canvas>
       
       {/* Client locations info */}
-      <div className="absolute top-4 right-4 bg-white/90 dark:bg-gray-800/90 backdrop-blur-sm rounded-lg p-4 max-w-xs">
+      <motion.div 
+        className="absolute top-4 right-4 bg-white/90 dark:bg-gray-800/90 backdrop-blur-sm rounded-lg p-4 max-w-xs"
+        initial={{ opacity: 0, x: 20 }}
+        whileInView={{ opacity: 1, x: 0 }}
+        transition={{ duration: 0.8, delay: 0.5 }}
+        viewport={{ once: true }}
+      >
         <h3 className="text-sm font-semibold text-gray-900 dark:text-white mb-2">
           Client Locations
         </h3>
@@ -107,8 +119,8 @@ const InteractiveGlobe: React.FC = () => {
             </div>
           ))}
         </div>
-      </div>
-    </div>
+      </motion.div>
+    </motion.div>
   );
 };
 

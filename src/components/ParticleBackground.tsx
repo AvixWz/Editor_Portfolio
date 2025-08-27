@@ -1,5 +1,6 @@
 import React, { useEffect, useRef } from 'react';
 import { useTheme } from '../contexts/ThemeContext';
+import { throttle } from '../utils/performance';
 
 interface Particle {
   x: number;
@@ -69,18 +70,18 @@ const ParticleBackground: React.FC = () => {
         ctx.fill();
 
         // Draw connections
-        particlesRef.current.slice(index + 1).forEach((otherParticle) => {
+        particlesRef.current.slice(index + 1, index + 6).forEach((otherParticle) => {
           const dx = particle.x - otherParticle.x;
           const dy = particle.y - otherParticle.y;
           const distance = Math.sqrt(dx * dx + dy * dy);
 
-          if (distance < 100) {
+          if (distance < 80) {
             ctx.beginPath();
             ctx.moveTo(particle.x, particle.y);
             ctx.lineTo(otherParticle.x, otherParticle.y);
             ctx.strokeStyle = isDark
-              ? `rgba(59, 130, 246, ${0.1 * (1 - distance / 100)})`
-              : `rgba(99, 102, 241, ${0.1 * (1 - distance / 100)})`;
+              ? `rgba(59, 130, 246, ${0.15 * (1 - distance / 80)})`
+              : `rgba(99, 102, 241, ${0.15 * (1 - distance / 80)})`;
             ctx.lineWidth = 0.5;
             ctx.stroke();
           }
@@ -94,10 +95,10 @@ const ParticleBackground: React.FC = () => {
     createParticles();
     animate();
 
-    const handleResize = () => {
+    const handleResize = throttle(() => {
       resizeCanvas();
       createParticles();
-    };
+    }, 250);
 
     window.addEventListener('resize', handleResize);
 
