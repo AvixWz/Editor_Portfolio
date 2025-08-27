@@ -46,14 +46,14 @@ const Contact: React.FC = () => {
     {
       icon: Linkedin,
       name: 'LinkedIn',
-      handle: 'Henry Rodriguez',
+      handle: 'Henry GFX',
       link: 'https://linkedin.com/in/henrygfx',
       followers: '3.2K',
       description: 'Professional updates and industry insights',
     },
     {
       icon: Twitter,
-      name: 'x',
+      name: 'X',
       handle: '@Saptadweep19847',
       link: 'https://x.com/Saptadweep19847',
       followers: '8.7K',
