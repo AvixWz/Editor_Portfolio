@@ -292,7 +292,7 @@ const Contact: React.FC = () => {
             Don't hesitate to reach out - I'd love to hear about your vision!
           </p>
           <motion.a
-            href="mailto:hello@henrygfx.com"
+            href="https://mail.google.com/mail/?view=cm&to=@gmail.com"
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
             className="inline-flex items-center px-8 py-4 bg-gradient-to-r from-blue-600 to-purple-600 text-white font-semibold rounded-full hover:shadow-lg transition-all duration-300"
