@@ -32,6 +32,7 @@ const faqData: FAQItem[] = [
     question: 'Do you provide ongoing support?',
     answer: 'Yes! I offer ongoing support and maintenance for all projects. This includes minor updates, technical support, and guidance on how to use your new designs effectively. I believe in building long-term relationships with my clients.',
   },
+  
 ];
 
 const FAQ: React.FC = () => {
