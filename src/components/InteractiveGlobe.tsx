@@ -1,6 +1,6 @@
-import React, { useRef, useEffect } from 'react';
-import { Canvas, useFrame, useThree } from '@react-three/fiber';
-import { Sphere, Line } from '@react-three/drei';
+import React, { useRef } from 'react';
+import { Canvas, useFrame } from '@react-three/fiber';
+import { Sphere } from '@react-three/drei';
 import * as THREE from 'three';
 import { useTheme } from '../contexts/ThemeContext';
 import { motion } from 'framer-motion';
@@ -20,27 +20,31 @@ const clientLocations: ClientLocation[] = [
   { name: 'Toronto, Canada', coordinates: [43.6532, -79.3832], projects: 4 },
 ];
 
+const latLngToVector3 = (lat: number, lng: number, radius: number = 2) => {
+  const phi = (90 - lat) * (Math.PI / 180);
+  const theta = (lng + 180) * (Math.PI / 180);
+  return new THREE.Vector3(
+    -radius * Math.sin(phi) * Math.cos(theta),
+    radius * Math.cos(phi),
+    radius * Math.sin(phi) * Math.sin(theta)
+  );
+};
+
 const Globe: React.FC = () => {
   const meshRef = useRef<THREE.Mesh>(null);
   const { isDark } = useTheme();
+  const pulseRefs = useRef<THREE.Mesh[]>([]);
 
-  useFrame((state) => {
-    if (meshRef.current) {
-      meshRef.current.rotation.y += 0.001;
-    }
+  useFrame(() => {
+    if (meshRef.current) meshRef.current.rotation.y += 0.0008; // slow auto rotation
+
+    pulseRefs.current.forEach((mesh, i) => {
+      mesh.scale.setScalar(1 + 0.3 * Math.sin(Date.now() * 0.002 + i));
+      const material = mesh.material as THREE.MeshStandardMaterial;
+      material.opacity = 0.3 + 0.2 * Math.sin(Date.now() * 0.002 + i);
+      material.emissiveIntensity = 0.5 + 0.3 * Math.sin(Date.now() * 0.002 + i); // dynamic glow
+    });
   });
-
-  // Convert lat/lng to 3D coordinates
-  const latLngToVector3 = (lat: number, lng: number, radius: number = 2) => {
-    const phi = (90 - lat) * (Math.PI / 180);
-    const theta = (lng + 180) * (Math.PI / 180);
-    
-    return new THREE.Vector3(
-      -radius * Math.sin(phi) * Math.cos(theta),
-      radius * Math.cos(phi),
-      radius * Math.sin(phi) * Math.sin(theta)
-    );
-  };
 
   return (
     <group>
@@ -57,22 +61,32 @@ const Globe: React.FC = () => {
       {/* Client locations */}
       {clientLocations.map((location, index) => {
         const position = latLngToVector3(location.coordinates[0], location.coordinates[1]);
-        
         return (
           <group key={location.name}>
             {/* Location marker */}
             <mesh position={position}>
               <sphereGeometry args={[0.04]} />
-              <meshBasicMaterial color="#3b82f6" />
-            </mesh>
-            
-            {/* Pulsing ring */}
-            <mesh position={position}>
-              <ringGeometry args={[0.06, 0.1, 16]} />
-              <meshBasicMaterial
+              <meshStandardMaterial
                 color="#3b82f6"
+                emissive="#60a5fa"
+                emissiveIntensity={0.4}
+              />
+            </mesh>
+
+            {/* Pulsing glowing ring */}
+            <mesh
+              ref={(el) => {
+                if (el) pulseRefs.current[index] = el;
+              }}
+              position={position}
+            >
+              <ringGeometry args={[0.06, 0.1, 32]} />
+              <meshStandardMaterial
+                color="#3b82f6"
+                emissive="#8b5cf6" // glow color
+                emissiveIntensity={0.5}
                 transparent
-                opacity={0.3 + Math.sin(Date.now() * 0.002 + index) * 0.2}
+                opacity={0.6}
                 side={THREE.DoubleSide}
               />
             </mesh>
@@ -85,7 +99,7 @@ const Globe: React.FC = () => {
 
 const InteractiveGlobe: React.FC = () => {
   return (
-    <motion.div 
+    <motion.div
       className="w-full h-96 relative"
       initial={{ opacity: 0, scale: 0.8 }}
       whileInView={{ opacity: 1, scale: 1 }}
@@ -97,9 +111,9 @@ const InteractiveGlobe: React.FC = () => {
         <pointLight position={[10, 10, 10]} intensity={1} />
         <Globe />
       </Canvas>
-      
-      {/* Client locations info */}
-      <motion.div 
+
+      {/* Client locations overlay */}
+      <motion.div
         className="absolute top-4 right-4 bg-white/90 dark:bg-gray-800/90 backdrop-blur-sm rounded-lg p-4 max-w-xs"
         initial={{ opacity: 0, x: 20 }}
         whileInView={{ opacity: 1, x: 0 }}
