@@ -110,13 +110,7 @@ const Services: React.FC = () => {
                 <span className="text-2xl font-bold text-blue-600 dark:text-blue-400">
                   {service.price}
                 </span>
-                <motion.button
-                  whileHover={{ scale: 1.05 }}
-                  whileTap={{ scale: 0.95 }}
-                  className="px-4 py-2 bg-blue-600 text-white rounded-full text-sm font-medium hover:bg-blue-700 transition-colors"
-                >
-                  Contact Me
-                </motion.button>
+
               </div>
             </motion.div>
           ))}
