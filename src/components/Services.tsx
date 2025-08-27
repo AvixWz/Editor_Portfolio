@@ -18,13 +18,13 @@ const services: Service[] = [
     features: ['Logo Design', 'Color Palette', 'Typography', 'Brand Guidelines'],
     price: 'From $1,200',
   },
-  {
-    icon: Monitor,
-    title: 'Web Design',
-    description: 'Modern, responsive websites that convert visitors into customers',
-    features: ['UI/UX Design', 'Responsive Layout', 'SEO Optimization', 'Performance'],
-    price: 'From $2,500',
-  },
+  // {
+  //   icon: Monitor,
+  //   title: 'Web Design',
+  //   description: 'Modern, responsive websites that convert visitors into customers',
+  //   features: ['UI/UX Design', 'Responsive Layout', 'SEO Optimization', 'Performance'],
+  //   price: 'From $2,500',
+  // },
   {
     icon: Smartphone,
     title: 'Mobile App Design',
