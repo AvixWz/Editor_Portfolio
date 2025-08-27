@@ -67,7 +67,7 @@ const Services: React.FC = () => {
           className="text-center mb-16"
         >
           <h2 className="text-4xl font-bold text-gray-900 dark:text-white mb-4">
-            Services I Offer
+            Services i Offer
           </h2>
           <p className="text-xl text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
             Comprehensive design solutions tailored to your business needs
