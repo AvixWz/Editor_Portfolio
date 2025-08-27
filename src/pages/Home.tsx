@@ -18,7 +18,8 @@ const Home: React.FC = () => {
     { label: 'Projects Completed', value: '150+' },
     { label: 'Happy Clients', value: '42' },
     { label: 'Years Experience', value: '5+' },
-    { label: 'Awards Won', value: '12' },
+    { label: 'High Budget Projects', value: '25+' },
+
   ];
 
   return (
@@ -39,7 +40,7 @@ const Home: React.FC = () => {
                 transition={{ duration: 1, delay: 0.2 }}
               >
                 <span className="bg-gradient-to-r from-blue-600 via-purple-600 to-cyan-500 bg-clip-text text-transparent">
-                  henrygfx
+                  𝑯𝒆𝒏𝒓𝒚𝑮𝒇𝒙
                 </span>
               </motion.h1>
               

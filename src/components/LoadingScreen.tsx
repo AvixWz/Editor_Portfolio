@@ -21,7 +21,7 @@ const LoadingScreen: React.FC = () => {
           transition={{ delay: 0.2 }}
           className="text-2xl font-bold bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent"
         >
-          henrygfx
+          𝑯𝒆𝒏𝒓𝒚𝑮𝒇𝒙
         </motion.h2>
         <motion.p
           initial={{ opacity: 0 }}
