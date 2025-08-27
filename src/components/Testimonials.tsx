@@ -40,6 +40,24 @@ const testimonials: Testimonial[] = [
     rating: 5,
     avatar: 'https://images.pexels.com/photos/415829/pexels-photo-415829.jpeg?auto=compress&cs=tinysrgb&w=150',
   },
+    {
+    id: 4,
+    name: 'Emily Rodriguez',
+    role: 'Product Manager',
+    company: 'DesignStudio',
+    content: 'Henry\'s UI/UX expertise is outstanding. He created intuitive interfaces that significantly improved our user engagement metrics.',
+    rating: 5,
+    avatar: 'https://images.pexels.com/photos/415829/pexels-photo-415829.jpeg?auto=compress&cs=tinysrgb&w=150',
+  },
+    {
+    id: 5,
+    name: 'Emily Rodriguez',
+    role: 'Product Manager',
+    company: 'DesignStudio',
+    content: 'Henry\'s UI/UX expertise is outstanding. He created intuitive interfaces that significantly improved our user engagement metrics.',
+    rating: 5,
+    avatar: 'https://images.pexels.com/photos/415829/pexels-photo-415829.jpeg?auto=compress&cs=tinysrgb&w=150',
+  },
 ];
 
 const Testimonials: React.FC = () => {
