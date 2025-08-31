@@ -2,6 +2,9 @@ import React, { useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { Award, Clock, Users, Zap, Code, Palette, Globe, Heart } from 'lucide-react';
 import LazyImage from '../components/LazyImage';
+import SkillsVisualization from '../components/SkillsVisualization';
+import AchievementsTimeline from '../components/AchievementsTimeline';
+import TechStack from '../components/TechStack';
 
 const About: React.FC = () => {
   useEffect(() => {
@@ -138,52 +141,14 @@ const About: React.FC = () => {
 
         {/* Skills Section */}
         <section className="mb-20">
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            viewport={{ once: true }}
-            className="text-center mb-12"
-          >
-            <h2 className="text-4xl font-bold text-gray-900 dark:text-white mb-4">
-              Skills & Expertise
-            </h2>
-            <p className="text-xl text-gray-600 dark:text-gray-300">
-              Proficient in various design disciplines and tools
-            </p>
-          </motion.div>
-
-          <div className="grid md:grid-cols-2 gap-8">
-            {skills.map((skill, index) => (
-              <motion.div
-                key={skill.name}
-                initial={{ opacity: 0, x: index % 2 === 0 ? -50 : 50 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                transition={{ duration: 0.8, delay: index * 0.1 }}
-                viewport={{ once: true }}
-                className="space-y-2"
-              >
-                <div className="flex justify-between items-center">
-                  <span className="text-lg font-medium text-gray-900 dark:text-white">
-                    {skill.name}
-                  </span>
-                  <span className="text-sm text-gray-600 dark:text-gray-300">
-                    {skill.level}%
-                  </span>
-                </div>
-                <div className="w-full bg-gray-200 dark:bg-gray-700 rounded-full h-2">
-                  <motion.div
-                    className="bg-gradient-to-r from-blue-600 to-purple-600 h-2 rounded-full"
-                    initial={{ width: 0 }}
-                    whileInView={{ width: `${skill.level}%` }}
-                    transition={{ duration: 1, delay: index * 0.1 }}
-                    viewport={{ once: true }}
-                  />
-                </div>
-              </motion.div>
-            ))}
-          </div>
+          <SkillsVisualization />
         </section>
+
+        {/* Tech Stack */}
+        <TechStack />
+
+        {/* Achievements Timeline */}
+        <AchievementsTimeline />
 
         {/* Experience Section */}
         <section className="mb-20">

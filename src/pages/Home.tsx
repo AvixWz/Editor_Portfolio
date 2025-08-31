@@ -7,6 +7,14 @@ import Testimonials from '../components/Testimonials';
 import Services from '../components/Services';
 import FAQ from '../components/FAQ';
 import LazyImage from '../components/LazyImage';
+import SkillsVisualization from '../components/SkillsVisualization';
+import ProjectShowcase from '../components/ProjectShowcase';
+import ProcessTimeline from '../components/ProcessTimeline';
+import TechStack from '../components/TechStack';
+import BlogPreview from '../components/BlogPreview';
+import ContactForm from '../components/ContactForm';
+import AchievementsTimeline from '../components/AchievementsTimeline';
+import AnimatedCounter from '../components/AnimatedCounter';
 
 const Home: React.FC = () => {
   useEffect(() => {
@@ -15,10 +23,10 @@ const Home: React.FC = () => {
   }, []);
 
   const stats = [
-    { label: 'Projects Completed', value: '150+' },
-    { label: 'Happy Clients', value: '42' },
-    { label: 'Years Experience', value: '5+' },
-    { label: 'High Budget Projects', value: '25+' },
+    { label: 'Projects Completed', value: 150, suffix: '+' },
+    { label: 'Happy Clients', value: 42, suffix: '' },
+    { label: 'Years Experience', value: 5, suffix: '+' },
+    { label: 'High Budget Projects', value: 25, suffix: '+' },
 
   ];
 
@@ -89,7 +97,7 @@ const Home: React.FC = () => {
                 transition={{ duration: 0.6, delay: 0.8 + index * 0.1 }}
               >
                 <div className="text-3xl font-bold text-blue-600 dark:text-blue-400 mb-2">
-                  {stat.value}
+                  <AnimatedCounter end={stat.value} suffix={stat.suffix} />
                 </div>
                 <div className="text-gray-600 dark:text-gray-300 text-sm">
                   {stat.label}
@@ -131,8 +139,29 @@ const Home: React.FC = () => {
       {/* Services Section */}
       <Services />
 
+      {/* Skills Visualization */}
+      <SkillsVisualization />
+
+      {/* Featured Projects */}
+      <ProjectShowcase />
+
+      {/* Process Timeline */}
+      <ProcessTimeline />
+
+      {/* Tech Stack */}
+      <TechStack />
+
+      {/* Achievements Timeline */}
+      <AchievementsTimeline />
+
       {/* Testimonials Section */}
       <Testimonials />
+
+      {/* Blog Preview */}
+      <BlogPreview />
+
+      {/* Contact Form */}
+      <ContactForm />
 
       {/* FAQ Section */}
       <FAQ />

@@ -5,6 +5,7 @@ import Header from './components/Header';
 import ParticleBackground from './components/ParticleBackground';
 import ScrollProgress from './components/ScrollProgress';
 import BackToTop from './components/BackToTop';
+import FloatingElements from './components/FloatingElements';
 import Home from './pages/Home';
 import Projects from './pages/Projects';
 import About from './pages/About';
@@ -17,6 +18,7 @@ function App() {
         <div className="min-h-screen bg-gray-50 dark:bg-gray-900 transition-colors duration-300">
           <ScrollProgress />
           <ParticleBackground />
+          <FloatingElements />
           <Header />
           <main className="relative z-10">
             <Routes>
