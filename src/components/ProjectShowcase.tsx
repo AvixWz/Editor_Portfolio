@@ -107,12 +107,12 @@ const ProjectShowcase: React.FC = () => {
           viewport={{ once: true }}
           className="text-center mb-16"
         >
-          <h2 className="text-4xl font-bold text-gray-900 dark:text-white mb-4">
+          {/* <h2 className="text-4xl font-bold text-gray-900 dark:text-white mb-4">
             Featured Projects
           </h2>
           <p className="text-xl text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
             Detailed case studies of my most impactful work
-          </p>
+          </p> */}
         </motion.div>
 
         <div className="grid lg:grid-cols-3 gap-8">

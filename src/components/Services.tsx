@@ -7,7 +7,6 @@ interface Service {
   title: string;
   description: string;
   features: string[];
-  price: string;
 }
 
 const services: Service[] = [
@@ -16,28 +15,24 @@ const services: Service[] = [
     title: 'Brand Identity Design',
     description: 'Complete brand identity packages that make your business memorable',
     features: ['Logo Design', 'Color Palette', 'Typography', 'Brand Guidelines'],
-    price: 'From $1,200',
   },
   {
     icon: Printer,
     title: 'Print Design',
     description: 'Eye-catching print materials that leave lasting impressions',
     features: ['Brochures', 'Business Cards', 'Posters', 'Packaging'],
-    price: 'From $500',
   },
   {
     icon: Camera,
     title: 'Social Media Graphics',
     description: 'Consistent visual content that builds your online presence',
     features: ['Post Templates', 'Story Graphics', 'Ad Creatives', 'Content Strategy'],
-    price: 'From $800',
   },
   {
     icon: Zap,
     title: 'Motion Graphics',
     description: 'Dynamic animations that bring your brand to life',
     features: ['Logo Animation', 'Explainer Videos', 'Social Media Clips', 'Presentations'],
-    price: 'From $1,500',
   },
 ];
 
@@ -53,7 +48,7 @@ const Services: React.FC = () => {
           className="text-center mb-16"
         >
           <h2 className="text-4xl font-bold text-gray-900 dark:text-white mb-4">
-            Services i Offer
+            Services I Offer
           </h2>
           <p className="text-xl text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
             Comprehensive design solutions tailored to your business needs
@@ -83,7 +78,7 @@ const Services: React.FC = () => {
                 {service.description}
               </p>
 
-              <ul className="space-y-2 mb-6">
+              <ul className="space-y-2">
                 {service.features.map((feature) => (
                   <li key={feature} className="flex items-center text-sm text-gray-600 dark:text-gray-300">
                     <div className="w-2 h-2 bg-blue-500 rounded-full mr-3" />
@@ -91,13 +86,6 @@ const Services: React.FC = () => {
                   </li>
                 ))}
               </ul>
-
-              <div className="flex items-center justify-between">
-                <span className="text-2xl font-bold text-blue-600 dark:text-blue-400">
-                  {service.price}
-                </span>
-
-              </div>
             </motion.div>
           ))}
         </div>

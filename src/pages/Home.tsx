@@ -142,9 +142,6 @@ const Home: React.FC = () => {
       {/* Skills Visualization */}
       <SkillsVisualization />
 
-      {/* Featured Projects */}
-      <ProjectShowcase />
-
       {/* Process Timeline */}
       <ProcessTimeline />
 
@@ -156,12 +153,6 @@ const Home: React.FC = () => {
 
       {/* Testimonials Section */}
       <Testimonials />
-
-      {/* Blog Preview */}
-      <BlogPreview />
-
-      {/* Contact Form */}
-      <ContactForm />
 
       {/* FAQ Section */}
       <FAQ />
