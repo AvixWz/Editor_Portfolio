@@ -77,7 +77,7 @@ const About: React.FC = () => {
               <div className="relative">
                 <div className="w-full aspect-square rounded-2xl overflow-hidden shadow-2xl">
                   <LazyImage
-                    src="dist/assets/henry.jpg"
+                    src="public/henry.jpg"
                     alt="Henry - Graphic Designer"
                     className="w-full h-full opacity-80"
                   />
