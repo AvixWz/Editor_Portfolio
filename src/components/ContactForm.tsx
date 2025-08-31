@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { motion } from 'framer-motion';
+import { motion, AnimatePresence } from 'framer-motion'; // ✅ Added AnimatePresence
 import { Send, CheckCircle, AlertCircle, Loader } from 'lucide-react';
 
 interface FormData {
@@ -22,6 +22,7 @@ const ContactForm: React.FC = () => {
     timeline: '',
     message: ''
   });
+
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitStatus, setSubmitStatus] = useState<'idle' | 'success' | 'error'>('idle');
 
@@ -57,7 +58,6 @@ const ContactForm: React.FC = () => {
     e.preventDefault();
     setIsSubmitting(true);
 
-    // Simulate form submission
     try {
       await new Promise(resolve => setTimeout(resolve, 2000));
       setSubmitStatus('success');
