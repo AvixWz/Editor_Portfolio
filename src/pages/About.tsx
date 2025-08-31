@@ -33,7 +33,7 @@ const About: React.FC = () => {
       company: 'Self-Employed',
       period: '2020 - 2022',
       description: 'Provided comprehensive design services to startups and small businesses, specializing in brand identity and digital design.',
-      achievements: ['Worked with 30+ clients', 'Generated $200K+ in revenue', 'Built strong portfolio'],
+      achievements: ['Worked with 30+ clients', 'Built strong portfolio', 'Established client base'],
     },
     {
       title: 'Junior Designer',
@@ -80,7 +80,7 @@ const About: React.FC = () => {
               <div className="relative">
                 <div className="w-full aspect-square rounded-2xl overflow-hidden shadow-2xl">
                   <LazyImage
-                    src="/henry.jpg"
+                    src="public/henry.jpg"
                     alt="Henry - Graphic Designer"
                     className="w-full h-full opacity-80"
                   />

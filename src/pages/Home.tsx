@@ -8,13 +8,12 @@ import Services from '../components/Services';
 import FAQ from '../components/FAQ';
 import LazyImage from '../components/LazyImage';
 import SkillsVisualization from '../components/SkillsVisualization';
-import ProjectShowcase from '../components/ProjectShowcase';
 import ProcessTimeline from '../components/ProcessTimeline';
 import TechStack from '../components/TechStack';
-import BlogPreview from '../components/BlogPreview';
-import ContactForm from '../components/ContactForm';
 import AchievementsTimeline from '../components/AchievementsTimeline';
 import AnimatedCounter from '../components/AnimatedCounter';
+import ProjectShowcase from "../components/ProjectShowcase";
+
 
 const Home: React.FC = () => {
   useEffect(() => {
@@ -142,14 +141,14 @@ const Home: React.FC = () => {
       {/* Skills Visualization */}
       <SkillsVisualization />
 
+      {/* Featured Projects */}
+      <ProjectShowcase />
+
       {/* Process Timeline */}
       <ProcessTimeline />
 
       {/* Tech Stack */}
       <TechStack />
-
-      {/* Achievements Timeline */}
-      <AchievementsTimeline />
 
       {/* Testimonials Section */}
       <Testimonials />

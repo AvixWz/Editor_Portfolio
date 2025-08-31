@@ -48,7 +48,7 @@ const Services: React.FC = () => {
           className="text-center mb-16"
         >
           <h2 className="text-4xl font-bold text-gray-900 dark:text-white mb-4">
-            Services I Offer
+            Services i Offer
           </h2>
           <p className="text-xl text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
             Comprehensive design solutions tailored to your business needs
@@ -78,7 +78,7 @@ const Services: React.FC = () => {
                 {service.description}
               </p>
 
-              <ul className="space-y-2">
+              <ul className="space-y-2 mb-6">
                 {service.features.map((feature) => (
                   <li key={feature} className="flex items-center text-sm text-gray-600 dark:text-gray-300">
                     <div className="w-2 h-2 bg-blue-500 rounded-full mr-3" />
@@ -86,6 +86,7 @@ const Services: React.FC = () => {
                   </li>
                 ))}
               </ul>
+
             </motion.div>
           ))}
         </div>

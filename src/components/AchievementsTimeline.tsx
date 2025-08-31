@@ -17,16 +17,6 @@ const achievements: Achievement[] = [
   {
     id: 1,
     year: '2024',
-    title: 'Design Excellence Award',
-    description: 'Recognized for outstanding brand identity work at the International Design Awards',
-    icon: Trophy,
-    metric: '1st Place',
-    color: 'from-yellow-500 to-orange-500',
-    category: 'Award'
-  },
-  {
-    id: 2,
-    year: '2024',
     title: 'Client Portfolio Milestone',
     description: 'Reached 150+ completed projects with 98% client satisfaction rate',
     icon: Target,
@@ -35,7 +25,7 @@ const achievements: Achievement[] = [
     category: 'Milestone'
   },
   {
-    id: 3,
+    id: 2,
     year: '2023',
     title: 'Revenue Growth',
     description: 'Achieved 200% year-over-year revenue growth through strategic partnerships',
@@ -45,7 +35,7 @@ const achievements: Achievement[] = [
     category: 'Business'
   },
   {
-    id: 4,
+    id: 3,
     year: '2023',
     title: 'Team Expansion',
     description: 'Built and led a team of 5 talented designers for large-scale projects',
@@ -55,7 +45,7 @@ const achievements: Achievement[] = [
     category: 'Leadership'
   },
   {
-    id: 5,
+    id: 4,
     year: '2022',
     title: 'Featured Designer',
     description: 'Featured in Design Weekly as "Designer to Watch" for innovative work',
@@ -64,11 +54,11 @@ const achievements: Achievement[] = [
     category: 'Recognition'
   },
   {
-    id: 6,
+    id: 5,
     year: '2021',
     title: 'First Major Client',
     description: 'Landed first Fortune 500 client, marking a significant career milestone',
-    icon: Award,
+    icon: Star,
     color: 'from-indigo-500 to-blue-500',
     category: 'Milestone'
   }
