@@ -52,20 +52,20 @@ const tools: Tool[] = [
     logo: '🎨',
     description: 'Utility-first CSS framework'
   },
-  {
-    name: 'Framer Motion',
-    category: 'Animation',
-    proficiency: 85,
-    logo: '🎬',
-    description: 'React animation library'
-  },
-  {
-    name: 'Three.js',
-    category: 'Animation',
-    proficiency: 75,
-    logo: '🌐',
-    description: '3D graphics and WebGL'
-  },
+  // {
+  //   name: 'Framer Motion',
+  //   category: 'Animation',
+  //   proficiency: 85,
+  //   logo: '🎬',
+  //   description: 'React animation library'
+  // },
+  // {
+  //   name: 'Three.js',
+  //   category: 'Animation',
+  //   proficiency: 75,
+  //   logo: '🌐',
+  //   description: '3D graphics and WebGL'
+  // },
   {
     name: 'Blender',
     category: '3D',
