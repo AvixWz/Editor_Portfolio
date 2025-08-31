@@ -1,6 +1,7 @@
 import React, { useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { Mail, MessageSquare, Instagram, Linkedin, Twitter, MapPin, Clock, Phone } from 'lucide-react';
+import ContactForm from '../components/ContactForm';
 
 const Contact: React.FC = () => {
   useEffect(() => {
@@ -276,6 +277,9 @@ const Contact: React.FC = () => {
             </div>
           </motion.div>
         </div>
+
+        {/* Contact Form */}
+        <ContactForm />
 
         {/* Call to Action */}
         <motion.div
