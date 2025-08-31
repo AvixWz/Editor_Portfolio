@@ -44,7 +44,7 @@ const Header: React.FC = () => {
                 whileTap={{ scale: 0.95 }}
                 className="flex items-center"
               >
-                <img src="public/logo.jpg" alt="Logo" className="w-10 h-10 object-cover rounded-lg" />
+                <img src="/logo.jpg" alt="Logo" className="w-10 h-10 object-cover rounded-lg" />
                 <span className="ml-2 text-xl font-bold bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
                   HenryGfx
                 </span>
